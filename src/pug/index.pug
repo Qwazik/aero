@@ -1,0 +1,38 @@
+extends _template
+include blocks/product-tile
+include blocks/checkbox-label
+
+block main
+    .bg-muted100.p-1
+        .container
+            .row
+                .col-9
+                    .row.js-products-container        
+                        -for(var i=0;i<3;i++)
+                            .col-4: +product-tile(i)
+                .col-3
+                    include blocks/filter
+    script(id="entry-template" type="text/x-handlebars-template").
+        <div class="col-4">
+        <div class="product-tile js-product" data-id="{{id}}">
+        <div class="product-tile__code">Арт. {{code}}</div><a class="product-tile__preview" href="#">
+            <img class="product-tile__image" src="img/image-zone.jpg" alt=""></a>
+        <div class="product-tile__avail product-tile__avail_is-avail">
+            <i class="icm icm-check"></i><span>В наличии</span></div>
+            <a class="product-tile__name" href="#">{{name}}</a>
+        <div class="product-tile__props">
+            <ul class="product-props">
+                {{#each props}}
+                    <li class="product-props__item">{{name}}</li>
+                {{~/each}}
+            </ul>
+        </div>
+        <div class="product-tile__footer">
+            <button class="btn btn_primary"><i class="icm icm-cart"></i><span>Купить</span></button>
+            <div class="product-tile__btns">
+            <button class="off-button product-tile__btn js-product-fav"><i class="icm icm-fav"></i></button>
+            <button class="off-button product-tile__btn js-product-comp"><i class="icm icon-comp"></i></button>
+            </div>
+        </div>
+        </div>
+        </div>

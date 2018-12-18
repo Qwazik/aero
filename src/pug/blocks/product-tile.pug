@@ -1,0 +1,22 @@
+mixin product-tile(id)
+    .product-tile.js-product(data-id=id)
+        .product-tile__code Арт. 34534345
+        a(href="#").product-tile__preview
+            img(src="img/image-zone.jpg", alt="").product-tile__image
+        .product-tile__avail.product-tile__avail_is-avail
+            i.icm.icm-check
+            span В наличии
+        a(href="#").product-tile__name Canon PowerShot SX400 IS с улучшенной матрицей и объективом
+        .product-tile__props
+            ul.product-props
+                li.product-props__item <span class="text-muted400">Физический</span> размер 23.2 x 15.2 мм
+                li.product-props__item <span class="text-muted400">Диафрагма</span> CMOS
+                li.product-props__item <span class="text-muted400">Формат</span> записи RAW, JPEG, MP4 и другие
+                li.product-props__item <span class="text-muted400">Фокусное</span> расстояние 18-55 мм.
+        .product-tile__footer
+            button.btn.btn_primary
+                i.icm.icm-cart
+                span Купить
+            .product-tile__btns
+                button.off-button.product-tile__btn.js-product-fav: i.icm.icm-fav
+                button.off-button.product-tile__btn.js-product-comp: i.icm.icon-comp

@@ -1,0 +1,138 @@
+@import "_mixins";
+
+/*-------------------------------------------------*/
+/*  font-family
+/*-------------------------------------------------*/
+$ff-primary: ProximaNova, sans-serif;
+
+// ---------------------------
+// colors
+// ---------------------------
+$white: #fff;
+$blue:       hsl(200, 98%, 39%); //0284c6
+$blue-light: hsl(hue($blue) + 11, 69%, 55%); //3e8bdc
+$blue-dark:  hsl(hue($blue), 87%, 29%); //0a608b
+$green: #81c03d;
+
+$muted100:   hsl(0, 0%, 97%); //f7f7f7
+$muted200:   hsl(0, 0%, 87%); //dfdfdf
+$muted300:   hsl(0, 0%, 75%); //bfbfbf
+$muted400:   hsl(0, 0%, 49%); //7e7e7e
+$muted500:   hsl(0, 0%, 29%); //4a4a4a
+$muted600:   hsl(0, 0%, 20%); //333333
+
+// set pseudo
+$primary: $blue;
+$primary-light: $blue-light;
+$primary-dark: $blue-dark;
+$secondary: $green;
+
+// ---------------------------
+// colors
+// ---------------------------
+// buttons colors
+$button-colors: (
+    primary: $primary,
+    muted: $muted100
+);
+// text-colors
+$text-colors: (
+    primary: $primary,
+    secondary: $green,
+    muted100: $muted100,
+    muted200: $muted200,
+    muted300: $muted300,
+    muted400: $muted400,
+    muted500: $muted500,
+    muted600: $muted600
+);
+// text-sizes
+$text-size: (
+
+);
+// backgrounds
+$backgrounds-colors: (
+  white: $white,
+  primary: $primary,
+  muted100: $muted100,
+  muted200: $muted200,
+  muted300: $muted300,
+  muted400: $muted400,
+  muted500: $muted500,
+  muted600: $muted600
+);
+// borders
+
+
+// ---------------------------
+// body
+// ---------------------------
+$body-font-size: 16;
+$body-background-color: $white;
+$body-font-family: $ff-primary;
+
+// ---------------------------
+// bootstrap grid
+// ---------------------------
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem
+), $spacers);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+$sizes: map-merge((
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto
+), $sizes);
+// stylelint-enable
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$enable-grid-classes:       true !default;
+
+$grid-breakpoints: (
+  xs: 0
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  xl: 1260px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           10px !default;

@@ -1,0 +1,8 @@
+{
+    "success": true,
+    "result":{
+        "inFav": true,
+        "status": "SUCCESS",
+        "message": "Товар успешно добавлен в избранное, удален из избранного"
+    }
+}
